@@ -48,7 +48,7 @@ app.post('/login', async (request,response)=>{
     let dbUser = client.db('Blogs').collection('users').findOne({email:email});
         dbUser
         .then((res)=>{
-            if(res === undefined){
+            if(res === null){
                 response.json({ error_msg: "email_id is incorrect" });
             }else{
 
